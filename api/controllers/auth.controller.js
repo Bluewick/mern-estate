@@ -34,7 +34,7 @@ export const signin = async (req, res, next) => {
         } 
         const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
         const { password: hashedPassword, ...user } = validUser._doc;
-        res.cookie('token', token, { httpOnly: true }).status(200).json( user );
+        res.cookie('access_token', token, { httpOnly: true }).status(200).json( user );
     } catch (error) {
         next(error);
     }
