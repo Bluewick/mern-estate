@@ -13,7 +13,7 @@ export const signup = async (req, res, next) => {
         res.status(201).json({ message: 'Signup success' });
     } catch (error) {
         // next(errorHandler(550, 'Signup failed'));
-        next(error);
+        next(error); 
     }
     await newUser.save();
     // res.status(201).json({ message: 'Signup success' }); 
