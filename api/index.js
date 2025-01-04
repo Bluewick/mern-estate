@@ -20,11 +20,16 @@ app.listen(3000, () => {
   console.log('Server is running on : http://localhost:3000');
 });
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World');
-// });
-
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 
-// Timeframe 1:23 
+
+app.use((err, req, res, next) => {
+    // console.log(err);
+    const statusCode = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+    return res.status(statusCode).json({ 
+      success: false,
+      statusCode,
+      message });
+  });
