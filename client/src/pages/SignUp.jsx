@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
+import OAuth from '../components/OAuth';
 
 
 export default function SignUp() {
@@ -52,6 +53,7 @@ export default function SignUp() {
           <label htmlFor="password" className='text-sm font-semibold'>Password</label>
           <input type="password" id='password' placeholder='password' className='border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 my-2'onChange={handleChange}/>
           <button disabled={loading} type='submit' className='bg-yellow-400 text-yellow-900 font-semibold p-2 rounded-md my-2 hover:bg-yellow-300 disabled:opacity-80'>{loading ? 'Loading...' : 'Sign Up'}</button>
+          <OAuth />
         </div>
       </form>
             <div className='text-center mt-4'>
