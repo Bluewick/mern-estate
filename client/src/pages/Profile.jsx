@@ -5,6 +5,8 @@ import React from 'react'
 import { app } from '../firebase'
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutStart, signOutSuccess, signOutFailure } from '../redux/user/userSlice'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -140,8 +142,11 @@ export default function Profile() {
         <input onChange={handleChange} defaultValue={currentUser.email} type="email" id="email" placeholder='email' className='border p-3 rounded-md my-2 w-full' />
         <input onChange={handleChange}  type="password" id="password" placeholder='password' className='border p-3 rounded-md my-2 w-full' />
         <button disabled={loading} className='bg-blue-500 text-white p-3 rounded-md w-full my-2 hover:bg-blue-600 transition-all disabled:opacity-80'>{loading ? 'Loading...' : 'Update Profile'}</button>
+        <div className='flex justify-center'>
+          <Link className='bg-slate-700 text-white text-center p-3 rounded-md w-full mt-3 my-2 hover:bg-slate-800 transition-all disabled:opacity-80' to={"/create-listing"}>Create Listing</Link>
+        </div>
       </form>
-      <div className='flex justify-between gap-4 mt-5'>
+      <div className='flex justify-between gap-4 mt-3'>
         <span onClick={handleDeleteUser} className='text-red-600 cursor-pointer'>Delete account</span>
         <span onClick={handleSignOut} className='text-red-600 cursor-pointer'>Sign Out</span>
       </div>
