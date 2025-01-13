@@ -267,15 +267,7 @@ export default function CreateListing() {
                 Furnished
               </label>
             </div>
-            <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
-              <input type="checkbox" id="offer" className="w-5 h-5" onChange={handleChange} checked={formData.offer} />
-              <label
-                htmlFor="offer"
-                className="text-sm text-semibold px-2  rounded-md"
-              >
-                Offer
-              </label>
-            </div>
+
             <div className="flex flex-wrap gap-5 p-5 rounded-xl border-2  border-gray-100 w-full">
               <div className="flex items-center gap-2">
                 <input
@@ -314,6 +306,16 @@ export default function CreateListing() {
           </div>
 
           <div className="flex flex-wrap gap-3 my-3 mx-3 px-5 border-l-2 border-gray-200">
+
+            <div className="flex gap-2 w-full  p-3 border-s-blue-800 rounded-xl">
+              <label htmlFor="offer" class="inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="offer" className="sr-only peer" onChange={handleChange} checked={formData.offer} />
+              <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600"></div>
+
+                <span class="ms-3 text-sm font-medium text-gray-900 ">Offer Discount Price</span>
+              </label>
+            </div>
+
             <div className="flex items-center gap-2">
               <input
                 type="number"
