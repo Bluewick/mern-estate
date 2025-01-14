@@ -256,7 +256,7 @@ export default function Profile() {
           <div key={listing._id} class="group flex flex-col h-full my-3 w-auto sm:w-full bg-white border border-gray-200 shadow-sm rounded-xl hover:shadow-md  ">
                 <Link to={`/listing/${listing._id}`}>
                 <div class="overflow-hidden h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-                  <img className='w-full h-full object-cover' src={listing.imageUrls[0]} alt="" />
+                  <img className='w-full h-full object-cover transition-transform hover:scale-110' src={listing.imageUrls[0]} alt="" />
                 </div> 
                 <div class="p-3 md:p-3">
                   <p class="mt-2 text-black font-medium hover:text-blue-600 ">
