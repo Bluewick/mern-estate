@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   getStorage,
   ref,
@@ -7,12 +7,13 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 import {useSelector} from 'react-redux'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 
 export default function CreateListing() {
   const {currentUser} = useSelector(state => state.user);
   const navigate = useNavigate();
+  const params = useParams();
   const [files, setFiles] = React.useState([]);
   const imagesRef = useRef(null);
   const [formData, setFormData] = React.useState({
@@ -36,9 +37,24 @@ export default function CreateListing() {
   const [error,setError] = React.useState(false);
   const [loading,setLoading] = React.useState(false);
 
+  useEffect(() => {
+  
+    const fetchListing = async () => {
+        const listingid = params.listingId;
+        console.log(listingid);
+        const res = await fetch(`/api/listing/get/${listingid}`);
+        const data = await res.json();
+        console.log(data);
+        if(data.success === false) return;
+        setFormData(data)
+        
+    }
+    fetchListing();
+    }, [])
 
 
-  // console.log(formData);
+
+//   console.log(formData);
   // console.log(files);
 
   const handleDragOver = (e) => {
@@ -94,7 +110,7 @@ export default function CreateListing() {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          // console.log("Upload is " + progress + "% done");
+        //   console.log("Upload is " + progress + "% done");
         },
         (error) => {
           reject(error);
@@ -148,7 +164,7 @@ export default function CreateListing() {
         if(+formData.regularPrice < +formData.discountPrice) return setError("Discount Price must be less than Regular Price")
       setLoading(true);
       setError(false);
-      const res = await fetch('/api/listing/create', {
+      const res = await fetch(`/api/listing/update/${params.listingId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -176,7 +192,7 @@ export default function CreateListing() {
 
   return (
     <main>
-      <h1 className="text-center text-2xl font-bold mt-6">Create Listing</h1>
+      <h1 className="text-center text-2xl font-bold mt-6">Update Listing</h1>
       <form onSubmit={handleSubmit} className="flex flex-wrap flex-col sm:w-[600px] mx-auto gap-4">
         <div>
           <div className="min-w-7 min-h-7 my-5 w-full inline-flex items-center text-xs align-middle ">
@@ -481,7 +497,7 @@ export default function CreateListing() {
               disabled={loading || uploading}
               className="my-5 w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 disabled:opacity-50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
             >
-              {loading ? 'Submitting...' : 'Submit listing'}
+              {loading ? 'Submitting...' : 'Update listing'}
             </button>
 
           </div>

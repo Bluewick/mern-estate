@@ -265,10 +265,13 @@ export default function Profile() {
                 </div>
                 </Link>
                 <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 ">
-                  <a onClick="" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-blue-500 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none " href="#">
+                  <a href={`/update-listing/${listing._id}`} class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-blue-500 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none ">
+                  {/* <Link to={`/update-listing/${listing._id}`}> */}
                     Edit
+                  {/* </Link> */}
                   </a>
-                  <a onClick={()=>handleListingDelete(listing._id)} class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-red-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none " href="#">
+                  
+                  <a onClick={()=>handleListingDelete(listing._id)} class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-red-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none ">
                     Delete
                   </a>
                 </div>
