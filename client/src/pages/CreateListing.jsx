@@ -231,24 +231,28 @@ export default function CreateListing() {
           </div>
 
           <div className="flex gap-2 flex-wrap items-center my-2 mx-3 px-5 border-l-2 border-gray-200">
-            <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
-              <input type="checkbox" id='sell' className="w-5 h-5" onChange={handleChange} checked={formData.type === 'sell'} />
-              <label
-                htmlFor="sell"
-                className="text-sm text-semibold px-2  rounded-md"
-              >
-                Sell
-              </label>
+            
+            <div className="flex gap-2 bg-slate-100 p-1 border-s-blue-800 rounded-xl">
+              <div className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${formData.type === 'sell' ? 'bg-white shadow-md' : 'bg-slate-100'}`}>
+                <input type="checkbox" id='sell' className="w-5 h-5" hidden onChange={handleChange} checked={formData.type === 'sell'} />
+                <label
+                  htmlFor="sell"
+                  className="text-sm text-semibold px-2  rounded-md cursor-pointer"
+                >
+                  Sell
+                </label>
+              </div>
+              <div className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${formData.type === 'rent' ? 'bg-white shadow-md' : 'bg-slate-100'}`}>
+                <input hidden type="checkbox" id="rent" className="w-5 h-5" onChange={handleChange} checked={formData.type === 'rent'}  />
+                <label
+                  htmlFor="rent"
+                  className="text-sm text-semibold px-2  rounded-md cursor-pointer"
+                >
+                  Rent
+                </label>
+              </div>
             </div>
-            <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
-              <input type="checkbox" id="rent" className="w-5 h-5" onChange={handleChange} checked={formData.type === 'rent'}  />
-              <label
-                htmlFor="rent"
-                className="text-sm text-semibold px-2  rounded-md"
-              >
-                Rent
-              </label>
-            </div>
+
             <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
               <input type="checkbox" id="parking" className="w-5 h-5" onChange={handleChange} checked={formData.parking}  />
               <label
