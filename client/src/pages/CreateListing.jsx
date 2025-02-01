@@ -177,7 +177,10 @@ export default function CreateListing() {
   return (
     <main>
       <h1 className="text-center text-2xl font-bold mt-6">Create Listing</h1>
-      <form onSubmit={handleSubmit} className="flex flex-wrap flex-col sm:w-[600px] mx-auto gap-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-wrap flex-col sm:w-[600px] mx-auto gap-4"
+      >
         <div>
           <div className="min-w-7 min-h-7 my-5 w-full inline-flex items-center text-xs align-middle ">
             <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full ">
@@ -231,10 +234,22 @@ export default function CreateListing() {
           </div>
 
           <div className="flex gap-2 flex-wrap items-center my-2 mx-3 px-5 border-l-2 border-gray-200">
-            
             <div className="flex gap-2 bg-slate-100 p-1 border-s-blue-800 rounded-xl">
-              <div className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${formData.type === 'sell' ? 'bg-white shadow-md' : 'bg-slate-100'}`}>
-                <input type="checkbox" id='sell' className="w-5 h-5" hidden onChange={handleChange} checked={formData.type === 'sell'} />
+              <div
+                className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${
+                  formData.type === "sell"
+                    ? "bg-white shadow-md"
+                    : "bg-slate-100"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  id="sell"
+                  className="w-5 h-5"
+                  hidden
+                  onChange={handleChange}
+                  checked={formData.type === "sell"}
+                />
                 <label
                   htmlFor="sell"
                   className="text-sm text-semibold px-2  rounded-md cursor-pointer"
@@ -242,8 +257,21 @@ export default function CreateListing() {
                   Sell
                 </label>
               </div>
-              <div className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${formData.type === 'rent' ? 'bg-white shadow-md' : 'bg-slate-100'}`}>
-                <input hidden type="checkbox" id="rent" className="w-5 h-5" onChange={handleChange} checked={formData.type === 'rent'}  />
+              <div
+                className={`flex gap-2 p-2  rounded-xl transition-all duration-300 ${
+                  formData.type === "rent"
+                    ? "bg-white shadow-md"
+                    : "bg-slate-100"
+                }`}
+              >
+                <input
+                  hidden
+                  type="checkbox"
+                  id="rent"
+                  className="w-5 h-5"
+                  onChange={handleChange}
+                  checked={formData.type === "rent"}
+                />
                 <label
                   htmlFor="rent"
                   className="text-sm text-semibold px-2  rounded-md cursor-pointer"
@@ -254,7 +282,13 @@ export default function CreateListing() {
             </div>
 
             <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
-              <input type="checkbox" id="parking" className="w-5 h-5" onChange={handleChange} checked={formData.parking}  />
+              <input
+                type="checkbox"
+                id="parking"
+                className="w-5 h-5"
+                onChange={handleChange}
+                checked={formData.parking}
+              />
               <label
                 htmlFor="parking"
                 className="text-sm text-semibold px-2  rounded-md"
@@ -263,7 +297,13 @@ export default function CreateListing() {
               </label>
             </div>
             <div className="flex gap-2 bg-slate-100 p-3 border-s-blue-800 rounded-xl">
-              <input type="checkbox" id="furnished" className="w-5 h-5" onChange={handleChange} checked={formData.furnished} />
+              <input
+                type="checkbox"
+                id="furnished"
+                className="w-5 h-5"
+                onChange={handleChange}
+                checked={formData.furnished}
+              />
               <label
                 htmlFor="furnished"
                 className="text-sm text-semibold px-2  rounded-md"
@@ -310,13 +350,23 @@ export default function CreateListing() {
           </div>
 
           <div className="flex flex-wrap gap-3 my-3 mx-3 px-5 border-l-2 border-gray-200">
-
             <div className="flex gap-2 w-full  p-3 border-s-blue-800 rounded-xl">
-              <label htmlFor="offer" className="inline-flex items-center cursor-pointer">
-              <input type="checkbox" id="offer" className="sr-only peer" onChange={handleChange} checked={formData.offer} />
-              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600"></div>
+              <label
+                htmlFor="offer"
+                className="inline-flex items-center cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  id="offer"
+                  className="sr-only peer"
+                  onChange={handleChange}
+                  checked={formData.offer}
+                />
+                <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600"></div>
 
-                <span className="ms-3 text-sm font-medium text-gray-900 ">Offer Discount Price</span>
+                <span className="ms-3 text-sm font-medium text-gray-900 ">
+                  Offer Discount Price
+                </span>
               </label>
             </div>
 
@@ -341,29 +391,27 @@ export default function CreateListing() {
               </div>
             </div>
             {formData.offer && (
-
-            <div className="flex items-center gap-2">
-              <input
-                type="number"
-                id="discountPrice"
-                min="0"
-                max="1000000000"
-                required
-                className="p-3 border border-grey-300 rounded-md"
-                value={formData.discountPrice}
-                onChange={handleChange}
-              />
-              <div className="flex flex-col items-start">
-                <p>Discounted Price</p>
-                {/* <span className='text-xs'>($ / month)</span>
-                 */}
-                <span className="inline-flex items-center bg-yellow-500 text-yellow-500 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-100 dark:text-yellow-500">
-                  {/* <span className="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span> */}
-                  $ / month
-                </span>
+              <div className="flex items-center gap-2">
+                <input
+                  type="number"
+                  id="discountPrice"
+                  min="0"
+                  max="1000000000"
+                  required
+                  className="p-3 border border-grey-300 rounded-md"
+                  value={formData.discountPrice}
+                  onChange={handleChange}
+                />
+                <div className="flex flex-col items-start">
+                  <p>Discounted Price</p>
+                  {/* <span className='text-xs'>($ / month)</span>
+                   */}
+                  <span className="inline-flex items-center bg-yellow-500 text-yellow-500 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-yellow-100 dark:text-yellow-500">
+                    {/* <span className="w-2 h-2 me-1 bg-yellow-500 rounded-full"></span> */}
+                    $ / month
+                  </span>
+                </div>
               </div>
-            </div>
-
             )}
           </div>
 
@@ -456,7 +504,9 @@ export default function CreateListing() {
                       alt="listing image"
                       className="w-20 h-20 object-cover rounded-md"
                     />
-                    <p>{formData.imageUrls.length - index}</p>
+                    {index === 0 ? (
+                      <p className="text-sm font-semibold w-max">Cover Image</p>
+                    ) : null}
                     <button
                       type="button"
                       onClick={() => handleRemoveImage(index)}
@@ -470,24 +520,33 @@ export default function CreateListing() {
             </div>
           </div>
           <div className="my-10 mx-3">
-            {error &&  
-            <div className="flex items-center p-4 mb-4 mt-7 text-sm text-red-800 rounded-lg bg-red-50 " role="alert">
-              <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-              </svg>
-              <span className="sr-only">Info</span>
-              <div>
-                <span className="font-medium">Error!</span> {error}
+            {error && (
+              <div
+                className="flex items-center p-4 mb-4 mt-7 text-sm text-red-800 rounded-lg bg-red-50 "
+                role="alert"
+              >
+                <svg
+                  className="flex-shrink-0 inline w-4 h-4 me-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="sr-only">Info</span>
+                <div>
+                  <span className="font-medium">Error!</span> {error}
+                </div>
               </div>
-            </div>}
+            )}
 
             <button
               disabled={loading || uploading}
               className="my-5 w-full text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 disabled:opacity-50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
             >
-              {loading ? 'Submitting...' : 'Submit listing'}
+              {loading ? "Submitting..." : "Submit listing"}
             </button>
-
           </div>
         </div>
       </form>

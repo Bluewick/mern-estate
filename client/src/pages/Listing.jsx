@@ -7,6 +7,8 @@ import 'swiper/css/bundle';
 import { Pagination } from 'swiper/modules';
 import {useSelector} from 'react-redux'
 import Contact from '../components/Contact';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faBed, faBath, faDollarSign, faEye, faCouch, faCar } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -124,7 +126,10 @@ export default function Listing() {
               <div className="sticky top-5">
                 <div className="bg-white p-6 rounded-xl shadow-sm border">
                   <h1 className="text-2xl font-semibold mb-4">{listing.name}</h1>
-                  <p className="text-gray-600 mb-4">{listing.address}</p>
+                  <p className="text-gray-600 mb-4">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-1" />
+                    {listing.address}
+                  </p>
                   
                   <div className="flex gap-4 mb-4">
                     <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
@@ -151,36 +156,19 @@ export default function Listing() {
 
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"/>
-                        <path d="M21 12H3"/>
-                        <path d="M6 12V21"/>
-                        <path d="M18 12V21"/>
-                      </svg>
+                      <FontAwesomeIcon icon={faBed} className="h-4 w-4 text-gray-600" />
                       <span className="text-gray-700 text-sm font-semibold">{listing.bedrooms} {listing.bedrooms > 1 ? 'Beds' : 'Bed'}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M4 12H20M4 12V20H20V12M4 12V4H20V12"/>
-                        <path d="M8 12V16"/>
-                        <path d="M16 12V16"/>
-                      </svg>
+                      <FontAwesomeIcon icon={faBath} className="h-4 w-4 text-gray-600" />
                       <span className="text-gray-700 text-sm font-semibold">{listing.bathrooms} {listing.bathrooms > 1 ? 'Baths' : 'Bath'}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M7 8H17"/>
-                        <path d="M7 12H17"/>
-                        <path d="M7 16H17"/>
-                      </svg>
+                      <FontAwesomeIcon icon={faCar} className="h-4 w-4 text-gray-600" />
                       <span className="text-gray-700 text-sm font-semibold">{listing.parking ? 'Parking spot' : 'No parking'}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"/>
-                        <path d="M12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10C11 10.5523 11.4477 11 12 11Z"/>
-                      </svg>
+                      <FontAwesomeIcon icon={faCouch} className="h-4 w-4 text-gray-600" />
                       <span className="text-gray-700 text-sm font-semibold">{listing.furnished ? 'Furnished' : 'Not furnished'}</span>
                     </div>
                   </div>

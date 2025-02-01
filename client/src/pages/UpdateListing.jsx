@@ -487,7 +487,8 @@ export default function CreateListing() {
                       alt="listing image"
                       className="w-20 h-20 object-cover rounded-md"
                     />
-                    <p>{formData.imageUrls.length - index}</p>
+                    {index === 0 ?<p className="text-sm font-semibold w-max">Cover Image</p> : null }
+                    {/* <p className="w-max bg-slate-200">{index+1 }</p> */}
                     <button
                       type="button"
                       onClick={() => handleRemoveImage(index)}
