@@ -12,6 +12,7 @@ import {useNavigate, useParams} from 'react-router-dom'
 
 export default function CreateListing() {
   const {currentUser} = useSelector(state => state.user);
+  const [unauthError, setUnauthError] = React.useState(null); 
   const navigate = useNavigate();
   const params = useParams();
   const [files, setFiles] = React.useState([]);
@@ -38,7 +39,13 @@ export default function CreateListing() {
   const [loading,setLoading] = React.useState(false);
 
   useEffect(() => {
-  
+
+    if (!currentUser) { 
+      setUnauthError("You must be logged in to access this page."); 
+      navigate('/login'); 
+      return; 
+    }
+
     const fetchListing = async () => {
         const listingid = params.listingId;
         console.log(listingid);
@@ -46,11 +53,17 @@ export default function CreateListing() {
         const data = await res.json();
         console.log(data);
         if(data.success === false) return;
+
+        if (data.userRef !== currentUser._id) {
+          setUnauthError("You are not authorized to edit this listing.");
+          return; 
+        }
+
         setFormData(data)
         
     }
     fetchListing();
-    }, [])
+    }, [currentUser, navigate, params.listingId])
 
 
 
@@ -192,8 +205,14 @@ export default function CreateListing() {
 
   return (
     <main>
-      <h1 className="text-center text-2xl font-bold mt-6">Update Listing</h1>
+      {unauthError && ( 
+        <div className="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+          <span className="font-medium">Error!</span> {unauthError}
+        </div>
+      )}
+      {!unauthError && 
       <form onSubmit={handleSubmit} className="flex flex-wrap flex-col sm:w-[600px] mx-auto gap-4">
+        <h1 className="text-center text-2xl font-bold mt-6">Update Listing</h1>
         <div>
           <div className="min-w-7 min-h-7 my-5 w-full inline-flex items-center text-xs align-middle ">
             <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full ">
@@ -503,6 +522,7 @@ export default function CreateListing() {
           </div>
         </div>
       </form>
+      }
     </main>
   );
 }
