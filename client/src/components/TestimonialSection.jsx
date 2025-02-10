@@ -6,19 +6,19 @@ const TestimonialSection = () => {
       quote: "This platform made finding my dream home effortless. Highly recommended!",
       name: "John Doe",
       location: "New York, USA",
-      image: "https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-1800e8ab-4d17-4c8d-b0db-54ae08f765ce0251663186421781916000.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0",
+      image: "https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(41).jpeg?alt=media&token=4dcde219-9fd5-4137-93ae-9f3c809eadfc",
     },
     {
       quote: "A seamless experience from start to finish. Great customer service!",
       name: "Jane Smith",
       location: "Los Angeles, USA",
-      image: "https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-6175007a-6947-429f-8991-d614d069da540251663186174245761200.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0",
+      image: "https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(42).jpeg?alt=media&token=72384ad2-6015-4ff2-ac0f-d70c2df8f5a0",
     },
     {
       quote: "I was able to sell my property within days. Fantastic results!",
       name: "Robert Brown",
       location: "Chicago, USA",
-      image: "https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-f7cafd75-32ec-48ed-b352-0019e3e098670251663186302380450100.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0",
+      image: "https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(40).jpeg?alt=media&token=5b262aa0-1a67-4561-85cf-892d5c0412c7",
     },
   ];
 

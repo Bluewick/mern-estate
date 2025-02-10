@@ -11,7 +11,7 @@ const MetricsSection = () => {
       </div>
       <div className="w-full md:w-1/3 flex justify-center mb-6 md:mb-0">
         <img
-          src="https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-dd3d4216-6cd0-4963-b3d5-bc8f4a20345e0251663192736398024900.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0"
+          src="https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(44).jpeg?alt=media&token=6fbd22c8-20ae-4402-826e-34d69596b1ed"
           alt="3D Illustration"
           className="rounded-full w-60 h-60 md:w-80 md:h-80 object-cover"
         />

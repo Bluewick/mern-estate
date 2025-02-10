@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <div>
       <div className='mx-10 '>
-        <div className='h-600 bg-blue-600 rounded-3xl flex items-center justify-center' style={{ backgroundImage: 'url("https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-45a9644d-53c1-4997-bec2-c3461f4debe80251663192287718105400.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className='h-600 bg-blue-600 rounded-3xl flex items-center justify-center' style={{ backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(37).jpeg?alt=media&token=e564d1fc-ae50-482d-bf1c-90eb38347ab6")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
           
           <div className=''>
             <h1 className="text-4xl lg:text-6xl text-white shadow-2xl text-center font-semibold">

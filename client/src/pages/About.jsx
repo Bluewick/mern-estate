@@ -5,7 +5,7 @@ const About = () => {
     <div className=" text-gray-900">
       <div 
         className="bg-blue-600 h-96 bg-cover bg-center flex items-center justify-center text-white text-4xl md:text-5xl font-bold"
-        style={{ backgroundImage: "url('https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/9660b066-74da-49ab-b6b5-d3d83d2be516/DallEGeneratedImages/dalle-ee390d85-aa51-422c-9bf9-8cf3b734fe070251663192350862677500.jpg&dcHint=JapanEast&fileToken=cf8c7a78-bc95-4f7e-87ad-4bed98cf9af0')", backgroundAttachment: "fixed" }}
+        style={{ backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(43).jpeg?alt=media&token=b0f84384-5a50-4076-a590-ced089d0a8cc')", backgroundAttachment: "fixed" }}
       >
         About FabEstate
       </div>

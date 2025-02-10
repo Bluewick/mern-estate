@@ -63,7 +63,7 @@ export default function SignUp() {
     // </div>
 
     <div className="text-gray-900">
-    <div className="h-screen flex flex-col items-center justify-center px-6" style={{ backgroundImage: "url('https://home.microsoftpersonalcontent.com/contentstorage/coJsE0OdIkqu2uEOCncHOQAAAAAAAAAAaH-m4vddi7M/_layouts/15/download.aspx?UniqueId=c74f74ea-13ec-4876-bb85-1a66b822f18b&Translate=false&tempauth=v1e.eyJzaXRlaWQiOiJmOWU1NmFlMS01MTM1LTQ2YTctOWJmOC04ZjM1M2IyYTU5NjYiLCJhcHBfZGlzcGxheW5hbWUiOiJEZXNpZ25lciIsImFwcGlkIjoiNWUyNzk1ZTMtY2U4Yy00Y2ZiLWIzMDItMzVmZTVjZDAxNTk3IiwiYXVkIjoiMDAwMDAwMDMtMDAwMC0wZmYxLWNlMDAtMDAwMDAwMDAwMDAwL2hvbWUubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM5MTIwNDY2In0.on9YXzpFzUR7lNHcfoxUNpEotRVfKN3z96pfZY8eEUY5MUC_w7FiTCTFSnK_r9tCishrZBIj8bmu__IjF6nuvAk5njfkNzFy1Xkimowsev9AwiM8gDt396KH7BwM3iTIzfSn2R-NXSBlrrfAoTBs1bKrrCmEFCpW6NBmLV5Pa8C-xx-H_-vIjeS3pLknkxh10y3hwB2AdiNZsRjbh7OHQEZ4KpcEvAKN773GCyVT3UE-VZN-oXoFcwnduujiqNaRIVVRnYm4SBBlovsDFIHFddzlcSKGioIxMt2EM_4ITaVZvruptP2eKOhKloc_2kkLAfKmKy2_-vspH8BQ-n4M2PMAaPy7g1wOg64X8th7STkrofH-GMpMx_rtQc6wrO-TRVQ69YkUUfGISRAwsmwX709JInURxvm2VsmltSlB-l8.9Z-QgtWD-LkxvbVsy1Etmb7NOOitl6ckT57zAfZ6RVg&ApiVersion=2.1')"}}>
+    <div className="h-screen flex flex-col items-center justify-center px-6" style={{ backgroundImage: "url('https://firebasestorage.googleapis.com/v0/b/mern-estate-36c0f.firebasestorage.app/o/Designer%20(39).jpeg?alt=media&token=07ce48d5-91fb-45ad-a82f-bb6516974962')"}}>
       <form onSubmit={handleSubmit} className="bg-white bg-opacity-80 backdrop-blur-lg shadow-lg rounded-2xl p-8 w-full max-w-md">
         <h1 className="text-3xl font-semibold text-center mb-6">Create Your Account</h1>
 
