@@ -5,7 +5,7 @@ import { faMapMarkerAlt, faBed, faBath, faDollarSign, faEye } from '@fortawesome
 
 export default function ListingItem({listing}) {
   return (
-    <div className="card m-3 max-w-sm bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="card m-3 max-w-sm bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full">
       <Link to={`/listing/${listing._id}`}>
         <img
           src={listing.imageUrls[0]}
@@ -13,11 +13,10 @@ export default function ListingItem({listing}) {
           className="object-cover h-56 w-full transition-transform duration-300 ease-in-out transform hover:scale-105"
         />
       </Link>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <Link to={`/listing/${listing._id}`}>
-          <h2 className="text-xl font-semibold text-gray-800 hover:text-blue-600">
+          <h2 className="text-lg font-semibold text-gray-800 hover:text-blue-600">
             {listing.name}
-
             {listing.type === "rent" && (
               <span className="ml-2 text-sm font-medium text-white bg-orange-500 rounded-full px-3 py-1">
                 Rent
@@ -57,7 +56,9 @@ export default function ListingItem({listing}) {
             </span>
           )}
         </div>
-        <div className="mt-4">
+
+        {/* Pushes the button to the bottom to align all cards */}
+        <div className="mt-auto">
           <Link
             to={`/listing/${listing._id}`}
             className="block text-center text-white bg-blue-500 hover:bg-blue-600 font-semibold py-2 px-4 rounded-lg transition-colors duration-300"

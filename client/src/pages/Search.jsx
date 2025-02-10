@@ -31,7 +31,6 @@ export default function Search() {
     const sortFromUrl = urlParams.get("sort");
     const orderFromUrl = urlParams.get("order");
 
-
     if (
       searchTermFromUrl ||
       typeFromUrl ||
@@ -167,7 +166,8 @@ export default function Search() {
               type="text"
               placeholder="Search..."
               className="bg-transparent focus:outline-none border rounded-md p-3 w-full"
-              value={sidebardata.searchTerm}
+              value={sidebardata.searchTerm == null ? "" : sidebardata.searchTerm}
+              // value={sidebardata.searchTerm}
               onChange={handleChange}
             />
           </div>
@@ -178,14 +178,14 @@ export default function Search() {
                 <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
                   <div className="relative flex items-start w-full">
                     <div className="flex items-center h-5">
-                      <input
+                      {/* <input
                         id="all"
                         name="all"
                         type="checkbox"
                         className="border-gray-200 rounded disabled:opacity-50"
                         checked={sidebardata.type === "all"}
                         onChange={handleChange}
-                      />
+                      /> */}
                     </div>
                     <label
                       htmlFor="all"
@@ -424,15 +424,24 @@ export default function Search() {
             </div>
           )}
 
-            <div className="grid gap-3 my-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center">
-              {!loading && listings && listings.map((listing) => (<ListingItem key={listing._id} listing={listing}/>) )}
-            </div>
+          <div className="grid gap-3 my-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center">
+            {!loading &&
+              listings &&
+              listings.map((listing) => (
+                <ListingItem key={listing._id} listing={listing} />
+              ))}
+          </div>
 
-            {showMore && (
-              <div className="flex justify-center">
-                <button onClick={onShowMoreClick} className="text-center w-max py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100" >Show more</button>
-              </div>
-            )}
+          {showMore && (
+            <div className="flex justify-center">
+              <button
+                onClick={onShowMoreClick}
+                className="text-center w-max py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              >
+                Show more
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
